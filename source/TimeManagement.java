@@ -8,8 +8,16 @@ class TimeManagement {
 	
 		LocalDate localDate = LocalDate.now();
 		
+		System.out.println(localDate);
+		
 		System.out.println(localDate.getDayOfMonth());
 		System.out.println(localDate.lengthOfMonth());
+		
+		localDate = localDate.minusDays(12);
+		System.out.println(localDate);
+		
+		localDate = localDate.minusWeeks(1);
+		System.out.println(localDate);
 	
 	}
 
