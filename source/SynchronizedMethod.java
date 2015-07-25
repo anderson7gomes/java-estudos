@@ -40,7 +40,9 @@ class MyRunnable implements Runnable {
 
 	public void run() {
 
-		CallMe.call(msg);
+		synchronized(target) {
+			target.call(msg);
+		}
 
 	} // end run method
 
@@ -48,7 +50,7 @@ class MyRunnable implements Runnable {
 
 class CallMe {
 
-	synchronized static void call(String message) {
+	void call(String message) {
 
 		System.out.print("[" + message);
 
