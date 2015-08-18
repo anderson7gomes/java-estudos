@@ -14,13 +14,8 @@ class CopyFile {
 			
 		}
 		
-		FileInputStream inputStream = null;
-		FileOutputStream outputStream = null;
-		
-		try {
-		
-			inputStream = new FileInputStream(args[0]);
-			outputStream = new FileOutputStream(args[1]);
+		try (FileInputStream inputStream = new FileInputStream(args[0]);
+			 FileOutputStream outputStream = new FileOutputStream(args[1])) {
 	
 			int in; // armazena os caracteres do arquivo de input
 	
@@ -36,28 +31,6 @@ class CopyFile {
 	
 		} catch (FileNotFoundException e) {
 			System.err.println("File not found");
-		} finally {
-		
-			try {
-		
-				if (inputStream != null) {
-					inputStream.close();
-				}
-			
-			} catch (IOException e) {
-				System.err.println("Error closing file " + args[0]);
-			}
-			
-			try {
-			
-				if (outputStream != null) {
-					outputStream.close();
-				}
-			
-			} catch (IOException e) {
-				System.err.println("Error closing file " + args[1]);
-			}
-			
 		}
 	
 	} // end main method

@@ -15,11 +15,7 @@ class ReadingFile {
 
 		}
 		
-		FileInputStream inputStream = null;
-		
-		try {
-		
-			inputStream = new FileInputStream(args[0]);
+		try (FileInputStream inputStream = new FileInputStream(args[0])) {
 			
 			int in; // armazena os caracteres lidos
 			
@@ -40,18 +36,6 @@ class ReadingFile {
 			
 		} catch (IOException e) {
 			e.printStackTrace();
-		} finally {
-		
-			try {
-			
-				if (inputStream != null) {
-					inputStream.close();
-				}	
-
-			} catch (IOException e) {
-				e.printStackTrace();
-			}
-		
 		}
 
 	} // end main method
