@@ -2,45 +2,57 @@ class GenericClassDemo {
 	
 	public static void main(String[] args) {
 		
-		GenericClass<Integer> iOb = new GenericClass<Integer>(42);
+		GenericClass<Integer, String> isOb = 
+				new GenericClass<Integer, String>(42, "Quarenta e Dois");
 
-		System.out.printf("Type of iOb: %s\n", 
-				iOb.getTypeClassName());	
+		System.out.printf("Type of field1 of isOb: %s\n", 
+				isOb.getField1ClassName());	
 				
-		System.out.printf("value: %s\n", iOb.getField());	
+		System.out.printf("Type of field2 of isOb: %s\n", 
+				isOb.getField2ClassName());			
+				
+		System.out.printf("value of field1: %s\n", isOb.getField1());
 		
-		GenericClass<String> sOb = 
-				new GenericClass<String>("Generic String");
-				
-		System.out.printf("\nType of sOb: %s\n", 
-				sOb.getTypeClassName());
-				
-		System.out.printf("value: %s\n", sOb.getField());						
-
+		System.out.printf("value of field2: %s\n", isOb.getField2());	
+		
 	} // end main method
 
 } // end GenericClassDemo class
 
-class GenericClass<T> {
+class GenericClass<T, V> {
 	
-	T field;
+	T field1;
+	V field2;
 
-	GenericClass(T fieldValue) {
+	GenericClass(T fieldValue1, V fieldValue2) {
 		
-		field = fieldValue;
+		field1 = fieldValue1;
+		field2 = fieldValue2;
 
-	} // end constructor - T
+	} // end constructor - T, V
 
-	String getTypeClassName() {
+	String getField1ClassName() {
 
-		return field.getClass().getName();
+		return field1.getClass().getName();
 
-	} // end getTypeClassName method
+	} // end getField1ClassName method
 
-	T getField() {
+	String getField2ClassName() {
+
+		return field2.getClass().getName();
+
+	} // end getField2ClassName method
+
+	T getField1() {
 		
-		return field;
+		return field1;
 
-	} // end getField method
+	} // end getField1 method
+	
+	V getField2() {
+		
+		return field2;
+
+	} // end getField2 method
 
 } // end GenericClass class
