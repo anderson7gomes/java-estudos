@@ -1,5 +1,11 @@
 class Foo {
 
+	double val;
+	
+	<T extends Number> Foo(T object) {
+		val = object.doubleValue();
+	} // end Foo constructor -- T
+
 	static <T extends Comparable<T>, V extends T> boolean isIn(T element, 
 			V[] set) {
 			
