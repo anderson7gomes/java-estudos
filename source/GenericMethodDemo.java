@@ -27,6 +27,8 @@ class GenericMethodDemo {
 
 	public static void main(String[] args) {
 	
+		new <Integer>Foo(new Integer(2));
+	
 		Integer[] nums = {1, 2, 3, 4, 5};
 		
 		showArray(nums, "nums");
