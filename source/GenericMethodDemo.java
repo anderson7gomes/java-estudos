@@ -26,7 +26,7 @@ class GenericMethodDemo {
 		showArray(nums, "nums");
 		
 		System.out.printf("2 is %sin nums\n", 
-				(Foo.isIn(2, nums)) ? "" : "not ");
+				(Foo.<Integer, Integer>isIn(2, nums)) ? "" : "not ");
 				
 		System.out.printf("7 is %sin nums\n", 
 				(Foo.isIn(7, nums)) ? "" : "not ");		
