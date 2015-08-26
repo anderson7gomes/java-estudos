@@ -23,6 +23,11 @@ class GenericClassDemo {
 		
 		System.out.printf("%s %s\n", raw.getField1(), raw.getField2());
 		
+		GenericSubclass<Integer, Double> idOb = 
+				new GenericSubclass<Integer, Double>(3, 3.0);
+				
+		System.out.printf("%d %.2f\n", idOb.getField1(), idOb.getField2());		
+		
 	} // end main method
 
 } // end GenericClassDemo class
@@ -64,3 +69,11 @@ class GenericClass<T, V> {
 	} // end getField2 method
 
 } // end GenericClass class
+
+class GenericSubclass<T, V> extends GenericClass<T, V> {
+
+	GenericSubclass(T field1, V field2) {
+		super(field1, field2);
+	} // end GenericSubclass constructor -- T, V 
+
+} // end GenericSubclass class
