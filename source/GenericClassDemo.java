@@ -13,7 +13,15 @@ class GenericClassDemo {
 				
 		System.out.printf("value of field1: %s\n", isOb.getField1());
 		
-		System.out.printf("value of field2: %s\n", isOb.getField2());	
+		System.out.printf("value of field2: %s\n", isOb.getField2());
+		
+		GenericClass raw = new GenericClass("raw", 7);
+		
+		System.out.printf("%s %s\n", raw.getField1(), raw.getField2());
+		
+		raw = isOb;
+		
+		System.out.printf("%s %s\n", raw.getField1(), raw.getField2());
 		
 	} // end main method
 
