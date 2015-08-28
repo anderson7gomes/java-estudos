@@ -27,8 +27,26 @@ class GenSubclass<T> extends GenSuperclass<T> {
     T getOb2() {
         return ob2;
     } // end getOb2 method
+    
+    @Override
+    T getOb1() {
+        return super.getOb1();
+    } // end getOb1 method
 
 } // end GenSubclass class
+
+class GenSubclass2<T extends Double> extends GenSuperclass<Double> {
+
+    GenSubclass2(T ob) {
+        super(ob);
+    } // end GenSubclass constructor -- T
+    
+    @Override
+    Double getOb1() {
+        return super.getOb1();
+    } // end getOb1 method
+
+} // end GenSubclass2 class
 
 class CastingGenericsDemo {
 
@@ -47,6 +65,10 @@ class CastingGenericsDemo {
         GenSubclass<?> genSub = (GenSubclass<?>) genSupStr;
         
         System.out.println(genSub.getOb2());
+        
+        GenSubclass2<Double> genSubDoub = new GenSubclass2<Double>(4.5);
+        
+        System.out.println(genSubDoub.getOb1());
     
     } // end main method
 
