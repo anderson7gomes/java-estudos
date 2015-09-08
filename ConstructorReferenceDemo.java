@@ -48,6 +48,16 @@ class ConstructorReferenceDemo {
         
         System.out.printf("Value of bar.val: %d\n", bar.val);
     
+        Bar<Double> bar2 = createBar(Bar<Double>::new, 8.9);
+    
+        System.out.printf("Value of bar2.val: %.2f\n", bar2.val);
+    
     } // end main method
+    
+    static <T> Bar<T> createBar(MyFunc2<T> f, T value) {
+    
+        return f.func(value);   
+    
+    } // end createBar method 
 
 } // end ConstructorReferenceDemo class
