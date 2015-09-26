@@ -12,6 +12,8 @@ class CloneMethodDemo {
 			f2 = (Foo) f1.clone();	
 			System.out.println("f2's var: " + f2.getVar());
 
+			System.out.println(f1 == f2);
+
 		} catch (CloneNotSupportedException e) {
 
 			System.err.println("Foo not suports clone operation");
