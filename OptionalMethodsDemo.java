@@ -11,6 +11,12 @@ class OptionalMethodsDemo {
 		Optional<String> emptyFoo = Optional.empty();
 		
 		System.out.println(emptyFoo.orElse("Default"));
+		
+		if (emptyFoo.isPresent()) {
+			System.out.println("emptyFoo contains value");	
+		} else {
+			System.out.println("emptyFoo not contains value");
+		}
 	
 	} // end main method
 
