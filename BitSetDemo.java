@@ -22,6 +22,14 @@ class BitSetDemo {
 	
 		System.out.println(bitSet2);
 	
+		bitSet1.set(4, 8);
+		
+		bitSet1.flip(6, 8);
+		
+		System.out.println(bitSet1);
+	
+		System.out.println(bitSet1.nextClearBit(2));
+	
 	} // end main method
 
 } // end BitSetDemo class
