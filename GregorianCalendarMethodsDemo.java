@@ -4,7 +4,7 @@ import java.util.GregorianCalendar;
 class GregorianCalendarMethodsDemo {
 	
 	public static void main(String[] args) {
-		
+
 		GregorianCalendar gregCalendar = 
 				new GregorianCalendar(2016, 
 						Calendar.MARCH, 30, 16, 30, 12);
@@ -29,6 +29,12 @@ class GregorianCalendarMethodsDemo {
 		System.out.println(gregCalendar.get(Calendar.MINUTE));
 		System.out.println(gregCalendar.get(Calendar.SECOND));
 						
+		System.out.println(gregCalendar.getCalendarType());
+		
+		int year = gregCalendar.get(Calendar.YEAR);
+
+		System.out.printf("%s is %sa leap year\n", 
+				year, (gregCalendar.isLeapYear(year) ? "" : "not "));
 
 	} // end main method
 	
