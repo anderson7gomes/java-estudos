@@ -38,8 +38,10 @@ class TimeAndDateFormating {
 
 		formatter = new Formatter();
 
-		formatter.format("%4s\n%.3s", 
+		formatter.format("%4s\n%.3s\n", 
 				"Anderson", "Anderson");
+
+		formatter.format("%020d", 1);
 
 		System.out.println(formatter);
 		
