@@ -10,8 +10,12 @@ class FileDirectoryRelatedMethods {
 			
 			System.out.println("List of files:");
 
-			for (String name : file.list()) {
-				System.out.println(name);
+			for (File f : file.listFiles()) {
+
+				System.out.print(f.getName() + ": ");
+				System.out.printf("%s\n", f.isDirectory() ? 
+						"directory" : "file");
+
 			}
 
 		}
